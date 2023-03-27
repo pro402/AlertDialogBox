@@ -19,8 +19,8 @@
 
     <LinearLayout
         android:id="@+id/ll"
-        android:layout_width="272dp"
-        android:layout_height="349dp"
+        android:layout_width="282dp"
+        android:layout_height="377dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:orientation="vertical"
@@ -36,6 +36,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:text="Contacts"
+            android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -44,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Enter the Following Details "
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -51,45 +53,48 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Click Submit to Save"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:backgroundTint="@drawable/skybutton"
+            android:background="@drawable/skybutton"
             app:startIconDrawable="@drawable/baseline_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@drawable/skybutton"
+                android:background="@drawable/skybutton"
                 android:hint="Name"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:backgroundTint="@drawable/skybutton"
+            android:background="@drawable/skybutton"
             app:startIconDrawable="@drawable/baseline_call_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
                 android:id="@+id/phonenumber"
-                android:inputType="phone"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@drawable/skybutton"
+                android:background="@drawable/skybutton"
                 android:hint="Phone Number"
-                android:textAlignment="center" />
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="#537FE7"
             android:pointerIcon="hand"
