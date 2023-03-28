@@ -69,8 +69,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/skybutton"
                 android:hint="Name"
-                android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textAlignment="center"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -87,8 +86,7 @@
                 android:background="@drawable/skybutton"
                 android:hint="Phone Number"
                 android:inputType="phone"
-                android:textAlignment="center"
-                android:textColor="@color/white" />
+                android:textAlignment="center"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
