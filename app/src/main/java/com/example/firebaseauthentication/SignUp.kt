@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.firebaseauthentication.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
     private lateinit var bsu:ActivitySignUpBinding
     private lateinit var firebaseAuth:FirebaseAuth
+    lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bsu = ActivitySignUpBinding.inflate(layoutInflater)
@@ -27,11 +30,18 @@ class SignUp : AppCompatActivity() {
             val usr = bsu.username.text.toString()
             val pass = bsu.pass.text.toString()
             val repass = bsu.repass.text.toString()
+            val user = users(eml,usr,pass)
 
             if (eml.isNotEmpty() && usr.isNotEmpty() && pass.isNotEmpty() && repass.isNotEmpty()){
                 if( pass == repass){
                     firebaseAuth.createUserWithEmailAndPassword(eml ,pass ).addOnCompleteListener{
                         if(it.isSuccessful){
+                            database= FirebaseDatabase.getInstance().getReference("User")
+                            database.child(usr).setValue(user).addOnSuccessListener {
+                                Toast.makeText(this,"Successfully Registered",Toast.LENGTH_SHORT).show()
+                            }.addOnFailureListener {
+                                Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
+                            }
                             val i = Intent(this,DialogBox::class.java)
                             startActivity(i)
                             finish()
