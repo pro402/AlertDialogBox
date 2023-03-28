@@ -12,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase
 class SignUp : AppCompatActivity() {
     private lateinit var bsu:ActivitySignUpBinding
     private lateinit var firebaseAuth:FirebaseAuth
-    lateinit var database: DatabaseReference
+    private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bsu = ActivitySignUpBinding.inflate(layoutInflater)
@@ -39,12 +39,13 @@ class SignUp : AppCompatActivity() {
                             database= FirebaseDatabase.getInstance().getReference("User")
                             database.child(usr).setValue(user).addOnSuccessListener {
                                 Toast.makeText(this,"Successfully Registered",Toast.LENGTH_SHORT).show()
+                                val i = Intent(this,DialogBox::class.java)
+                                startActivity(i)
+                                finish()
                             }.addOnFailureListener {
                                 Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
                             }
-                            val i = Intent(this,DialogBox::class.java)
-                            startActivity(i)
-                            finish()
+
                         }else{
                             Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
                         }

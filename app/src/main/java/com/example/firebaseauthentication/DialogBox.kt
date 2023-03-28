@@ -40,7 +40,7 @@ class DialogBox : AppCompatActivity() {
             val contacts = contacts(n,p)
 
             // Create a branch in the database for the current user
-            database = FirebaseDatabase.getInstance().getReference("User/Contacts(userUID)/$userId")
+            database = FirebaseDatabase.getInstance().getReference("User/UID/$userId")
 
             // Save the contact data to the current user's branch
             database.child(p).setValue(contacts).addOnSuccessListener {
